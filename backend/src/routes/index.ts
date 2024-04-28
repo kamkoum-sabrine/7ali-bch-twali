@@ -1,10 +1,10 @@
 import express from 'express';
-import { defineTodoRoutes } from './todo.routes';
+import { defineUserRoutes } from './user.routes';
 const router = express.Router();
 
 //require('./todo.routes')(router);
 
 
-defineTodoRoutes(router);
+defineUserRoutes(router);
 
 export default router
