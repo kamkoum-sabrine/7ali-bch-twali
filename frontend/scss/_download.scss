@@ -1,0 +1,195 @@
+.download_app_area{
+    padding-top: 100px;
+    padding-bottom: 320px;
+    @media #{$mobile_device} {
+        padding-top: 90px;
+        padding-bottom: 50px;
+    }
+    @media #{$tablet_device} {
+        padding-top: 90px;
+        padding-bottom: 150px;
+    }
+    &.plus_padding {
+        padding-top: 200px;
+        @media #{$tablet_device}{
+            padding-top: 100px;
+        }
+        @media #{$mobile_device}{
+            padding-top: 90px;
+        }
+    }
+    .download_thumb{
+        position: relative;
+        .big_img{
+            padding-left: 100px;
+            @media #{$mobile_device}{
+                padding-left: 0;
+            }
+            @media #{$tablet_device}{
+                padding-left: 40px;
+            }
+           img{
+            width: 100%;
+           }
+
+        }
+        .small_01 {
+            position: absolute;
+            top: 40px;
+            border-radius: 10px;
+            overflow: hidden;
+            @media #{$mobile_device}{
+                display: none;
+            }
+            @media #{$tablet_device}{
+                width: 100px;
+
+            }
+            img{
+                @media #{$tablet_device}{
+                    width: 100%;
+                }
+            }
+        }
+        .small_02 {
+            position: absolute;
+            right: 60px;
+            border-radius: 10px;
+            bottom: -120px;
+            overflow: hidden;
+            @media #{$mobile_device}{
+                display: none;
+            }
+            @media #{$tablet_device}{
+                width: 100px;
+                bottom: -60px;
+            }
+            img{
+                @media #{$tablet_device}{
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .download_text{
+        padding-left: 70px;
+        @media #{$mobile_device}{
+            padding-left: 0;
+            margin-top: 30px;
+        }
+        @media #{$tablet_device}{
+            padding-left: 20px;
+        }
+        @media #{$mid_device}{
+            padding-left: 20px;
+        }
+        h3{
+            font-size: 72px;
+            color: #000000;
+            line-height: 84px;
+            margin-bottom: 60px;
+            @media #{$mobile_device}{
+                font-size: 40px;
+                line-height: 44px;
+            }
+            @media #{$tablet_device}{
+                font-size: 40px;
+                color:#000000;
+                line-height: 50px;
+                margin-bottom: 45px;
+            }
+            @media #{$mid_device}{
+                font-size: 57px;
+                line-height: 65px;
+                margin-bottom: 60px;
+            }
+        }
+        .download_android_apple{
+            @media #{$mobile_device}{
+                @include flexbox();
+            }
+            @media #{$tablet_device}{
+                @include flexbox();
+            }
+            @media #{$mid_device}{
+                @include flexbox();
+            }
+            a{
+                display: inline-block;
+                background:#ffffff;
+                padding: 20px 44px 20px 30px;
+                margin-right: 5px;
+                border: 1px solid #eeeeee;
+                @media #{$mobile_device} {
+                    padding: 15px 10px 15px 10px;
+
+                }
+                @media #{$tablet_device} {
+                    padding: 15px 10px 15px 10px;
+
+                }
+                .download_link{
+                    i{
+                        font-size: 40px;
+                        color: #eeeeee;
+                        margin-right: 14px;
+                        @media #{$mobile_device} {
+                            font-size: 25px;
+                        }
+                    }
+                    .store{
+                        h5{
+                            font-family: $font2;
+                            font-size: 20px;
+                            font-weight: 700;
+                            line-height: 20px;
+                        }
+                        p{
+                            font-family: $font2;
+                            font-size: 12px;
+                            font-weight: 300;
+                            color: #888888;
+                            line-height: 12px;
+                        }
+                    }
+                }
+                &.active{
+                    background:#FFC000;
+                    border-color: transparent;
+                    .download_link{
+                        i{
+                            color: #000000;
+                        }
+                        p{
+                            color: #000;
+                        }
+                    }
+                    &:hover{
+                        border: 1px solid #eeeeee;
+                        background:#ffffff;
+                        .download_link{
+                            i{
+                                color: #eee;
+                            }
+                            p{
+                                color: #888;
+                            }
+                        }
+                    }
+                }
+                &:hover{
+                    background:#FFC000;
+                    .download_link{
+                        i{
+                            color: #000000;
+                        }
+                        p{
+                            color: #000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

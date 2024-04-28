@@ -1,0 +1,84 @@
+.customer_feedback_area{
+    padding-top: 200px;
+    padding-bottom: 110px;
+    &.padding_plus{
+        padding-bottom: 220px;
+        @media #{$mobile_device}{
+            padding-bottom: 50px;
+        }
+        @media #{$tablet_device}{
+            padding-bottom: 100px;
+        }
+    }
+    @media #{$mobile_device} {
+        padding-top: 50px;
+        padding-bottom: 0;
+    }
+    @media #{$tablet_device} {
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+    .single_customer{
+        display: inline-block;
+        margin-bottom: 45px;
+        border: 1px solid #eee;
+        border-radius: 5px;
+        padding: 40px 42px;
+        @media #{$mobile_device} {
+            display: block !important;
+        }
+        .thumb{
+            width: 100px;
+            height: 100px;
+            @include border-radius(50%);
+            margin-right: 22px;
+            @media #{$mobile_device}{
+                margin-bottom: 30px;
+            }
+            img{
+                width: auto;
+            }
+        }
+        .customer_meta{
+            display: inline-block;
+            h3{
+                font-size: 24px;
+                font-weight: 400;
+            }
+            span{
+                font-size: 12px;
+                font-weight: 300;
+                text-transform: uppercase;
+                display: block;
+                color: #777777;
+                display: block;
+                margin-top: 8px;
+                margin-bottom: 25px;
+            }
+            p{
+                font-size: 14px;
+                color: #777777;
+            }
+        }
+    }
+    .owl-dots{
+        position: absolute;
+        left: 50%;
+        @include transform(translateX(-50%));
+        div {
+            width: 20px;
+            height: 4px;
+            background: #EEEEEE;
+            display: inline-block;
+            margin: 0 5px;
+            @media #{$mobile_device} {
+                width: 15px;
+            }
+            &.active{
+                background: #FFC000;
+            }
+        }
+    }
+}
+
+  

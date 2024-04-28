@@ -1,0 +1,395 @@
+
+
+.recepie_area{
+    padding-top: 200px;
+    padding-bottom: 50px;
+    @media #{$mobile_device} {
+        padding-top: 50px;
+        padding-bottom: 0px;
+    }
+    @media #{$tablet_device} {
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+    @media #{$mid_device} {
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+    &.plus_padding{
+        padding-bottom: 150px;
+        @media #{$tablet_device}{
+            padding-bottom: 50px;
+        }
+        @media #{$mobile_device}{
+            padding-bottom: 0;
+        }
+        .single_recepie{
+            margin-bottom: 80px;
+            @media #{$mobile_device}{
+                margin-bottom: 40px;
+            }
+            @media #{$tablet_device}{
+                margin-bottom: 50px;
+            }
+        }
+    }
+    &.inc_padding{
+        padding-bottom: 150px;
+        @media #{$mid_device} {
+            padding-bottom: 100px;
+        }
+        @media #{$tablet_device} {
+            padding-bottom: 50px;
+        }
+        @media #{$tablet_device} {
+            padding-bottom: 50px;
+        }
+        @media #{$mobile_device} {
+            padding-bottom: 50px;
+        }
+    }
+    .single_recepie{
+        margin-bottom: 50px;
+        .recepie_thumb {
+            max-width: 300px;
+            max-height: 300px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: auto;
+            @media #{$mobile_device} {
+                width: 150px;
+                height: 150px;
+            }
+            @media #{$tablet_device} {
+                width: 150px;
+                height: 150px;
+            }
+            @media #{$mid_device} {
+                width: 150px;
+                height: 150px;
+            }
+            @media #{$large_device} {
+                width: 200px;
+                height: 200px;
+            }
+            img{
+                width: 100%;
+            }
+        }
+        h3{
+        font-size: 30px;
+        color:#000;
+        margin-top: 38px;
+        margin-bottom: 20px;
+        }
+        span{
+            font-size: 12px;
+            color: #777777;
+            font-weight: 400;
+            display: block;
+            margin-bottom: 5px;
+        }
+        p{
+            font-size: 14px;
+            color: #777777;
+            font-weight: 400;
+            display: block;
+            margin-bottom: 0;
+            margin-bottom: 31px;
+        }
+    }
+}
+
+// recepie_videoes_area 
+.recepie_videoes_area{
+    padding-top: 100px;
+    padding-bottom: 130px;
+    @media #{$mobile_device} {
+        padding-top: 50px;
+        padding-bottom: 30px;
+    }
+    @media #{$tablet_device} {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .recepie_info{
+        padding-right: 60px;
+        @media #{$mobile_device} {
+            padding-right: 0;
+        }
+        @media #{$tablet_device} {
+            margin-bottom: 40px;
+        }
+        // @media #{$tablet_device} {
+        //     padding-top: 100px;
+        //     padding-bottom: 50px;
+        // }
+        h3{
+            font-size: 72px;
+            @media #{$mobile_device} {
+                font-size: 30px;
+            }
+            @media #{$tablet_device} {
+                font-size: 40px;
+            }
+            @media #{$mid_device} {
+                font-size: 40px;
+            }
+        }
+        &>p{
+            margin-top: 56px;
+            margin-bottom: 53px;
+        }
+        .video_watch{
+
+            a{
+                display: inline-block;
+                width: 80px;
+                height: 80px;
+                @include border-radius(50%);
+                background: #ffc000;
+                font-size: 30px;
+                color: #fff;
+                text-align: center;
+                line-height: 80px;
+                margin-right: 25px;
+            }
+            .watch_text{
+                h4{
+                    font-size: 30px;
+                    margin-bottom: 7px;
+                }
+                p{
+                    color: #777777;
+                    font-size: 14px;
+                    margin-bottom: 0;
+                }
+            }
+
+        }
+    }
+    .videos_thumb{
+        position: relative;
+        @media #{$mobile_device} {
+            margin-top: 40px;
+        }
+        .big_img{
+            padding-left: 100px;
+            @media #{$mobile_device} {
+                padding-left: 0;
+            }
+            @media #{$tablet_device} {
+                padding-left: 30px;
+            }
+            @media #{$mid_device} {
+                padding-left: 50px;
+            }
+            img{
+                width: 100%;
+            }
+        }
+        .small_thumb {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            @media #{$mobile_device} {
+                display: none;
+            }
+            img{
+                @media #{$tablet_device}{
+                    width: 100%;
+                }
+                @media #{$mid_device}{
+                    width: 100%;
+                }
+            }
+            @media #{$tablet_device}{
+                width: 120px;
+            }
+            @media #{$mid_device}{
+                width: 120px;
+            }
+        }
+        .small_thumb_2 {
+            position: absolute;
+            right: 68px;
+            bottom: -105px;
+            @media #{$mobile_device} {
+                display: none;
+            }
+            @media #{$tablet_device}{
+                width: 120px;
+                bottom: -50px;
+            }
+            @media #{$mid_device}{
+                width: 120px;
+                bottom: -50px;
+            }
+            img{
+                @media #{$tablet_device}{
+                    width: 100%;
+                }
+                @media #{$mid_device}{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+// dish_area 
+.dish_area{
+    padding-top: 200px;
+    padding-bottom: 170px;
+    @media #{$tablet_device} {
+       padding-top: 100px;
+       padding-bottom: 70px;
+    }
+    @media #{$mobile_device} {
+       padding-top: 100px;
+       padding-bottom: 20px;
+    }
+    @media #{$mid_device} {
+       padding-top: 100px;
+       padding-bottom: 70px;
+    }
+    .single_dish{
+        @include border-radius(10px);
+        border: 1px solid #eee;
+        padding: 144px 42px 50px 42px;
+        // margin-right: 60px;
+        margin-bottom: 30px;
+        position: relative;
+        @media #{$mobile_device} {
+            margin-bottom: 130px !important;
+        }
+        @media #{$tablet_device} {
+            padding: 90px 42px 50px 42px;
+        }
+        .thumb{
+            width: 192px;
+            height: 192px;
+            @include border-radius(50%);
+            margin: auto;
+            position: absolute;
+            top: -94px;
+            left: 0;
+            right: 0;
+            @media #{$tablet_device} {
+                width: 130px;
+            height: 130px;
+            position: absolute;
+            top: -66px;
+            }
+            img{
+                @media #{$tablet_device}{
+                    width: 100%;
+                }
+            }
+        }
+        h3{
+        font-size: 30px;
+        color: #000000;
+        font-weight: 400;
+        margin-bottom: 24px;
+        }
+        p{
+            font-size: 14px;
+            font-weight: 300;
+            margin-bottom: 0;
+        }
+    }
+    .single_dish:last-child {
+        @media #{$mobile_device} {
+            margin-bottom: 50px !important;
+        }
+    }
+    .dish_wrap{
+        margin-left: -30px;
+        margin-right: -30px;
+        @media #{$mobile_device} {
+            margin: 0;
+        }
+        @media #{$mobile_device} {
+            display: block !important;
+        }
+        .single_dish{
+            margin: 0 30px;
+            @media #{$mobile_device}{
+                margin: 0;
+            }
+            @media #{$tablet_device}{
+                margin: 0 10px;
+            }
+        }
+    }
+}
+
+
+// latest_trand_area 
+.latest_trand_area{
+    background-image: url(../img/recepie/banner.png);
+    padding: 150px 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    @media #{$mobile_device} {
+        padding: 100px 0;
+    }
+    .trand_info{
+        p{
+            font-size: 12px;
+            color: #777777;
+            text-transform: uppercase;
+        }
+        h3{
+            color:#000000;
+            font-size: 60px;
+            margin-top: 14px;
+            margin-bottom: 75px;
+            @media #{$mobile_device} {
+                color:#000000;
+                font-size: 40px;
+                margin-top: 14px;
+                margin-bottom: 35px;
+            }
+        }
+        a{
+
+        }
+    }
+}
+
+.recepie_header_area{
+    padding-top: 195px;
+    padding-bottom: 96px;
+    @media #{$mobile_device} {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    @media #{$tablet_device} {
+        padding-top: 80px;
+        padding-bottom: 40px;
+    }
+    @media #{$mid_device} {
+        padding-top: 80px;
+        padding-bottom: 40px;
+    }
+    .recepie_text{
+        h3{
+            font-size: 48px;
+            color: #000000;
+            line-height: 60px;
+            margin-bottom: 40px;
+            @media #{$mobile_device} {
+                font-size: 31px;
+                color:#000000;
+                line-height: 40px;
+                margin-bottom: 40px;
+            }
+        }
+        p{
+
+        }
+    }
+}

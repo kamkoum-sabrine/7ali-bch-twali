@@ -1,0 +1,83 @@
+.recepie_details_area{
+    padding-top: 200px;
+    @media #{$mid_device} {
+        padding-top: 100px;
+    }
+    @media #{$mobile_device} {
+        padding-top: 50px;
+    }
+    @media #{$tablet_device} {
+        padding-top: 100px;
+    }
+    .recepies_thumb{
+        margin-bottom: 60px;
+        img{
+            width: 100%;
+        }
+    }
+    .recepies_info{
+        padding-left: 68px;
+        @media #{$tablet_device} {
+           padding-left: 30px;
+           margin-bottom: 30px;
+        }
+        @media #{$mobile_device} {
+           padding-left: 0px;
+        }
+        h3{
+            font-size: 30px;
+            color: #222222;
+            margin-bottom: 23px;
+        }
+        p{
+            color: #777777;
+            font-size: 14px;
+        }
+        .resepies_details{
+            margin-top: 38px;
+            margin-bottom: 30px;
+            ul{
+                li{
+                    p{  
+                        color: #777777;
+                        margin-bottom: 0;
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 24px;
+                        strong{
+                            width: 100px;
+                            color:#000000;
+                            font-size: 14px;
+                            font-weight: 300;
+                            display: inline-block;
+                        }
+                        i{
+                            color:#ffcc00 ;
+                        }
+                    }
+                }
+            }
+        }
+        .links{
+            a{
+                color:#cccccc ;
+                font-size: 14px;
+                margin-right: 10px;
+                &:hover{
+                    color: #000;
+                }
+            }
+        }
+    }
+    .recepies_text{
+        p{
+            font-size: 14px;
+            color: #777777;
+            line-height: 30px;
+            margin-bottom: 30px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+        }
+    }
+}
