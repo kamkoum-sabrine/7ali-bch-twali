@@ -22,7 +22,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.findAll = void 0;
+exports.create = exports.findAll = void 0;
 const user_model_1 = __importDefault(require("../models/user.model"));
 const findAll = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -35,3 +35,15 @@ const findAll = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.findAll = findAll;
+const create = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const user = new user_model_1.default(req.body);
+        const savedUser = yield user.save();
+        return res.status(201).json(savedUser);
+    }
+    catch (error) {
+        console.error(error); // Log the error for debugging purposes
+        return res.status(500).send('Internal Server Error');
+    }
+});
+exports.create = create;

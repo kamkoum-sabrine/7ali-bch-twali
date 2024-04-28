@@ -10,4 +10,5 @@ const user_controller_1 = require("../controllers/user.controller");
 const router = (0, express_1.Router)();
 // Définissez les routes pour les utilisateurs
 router.get('/users', user_controller_1.findAll);
+router.post("/users/create", user_controller_1.create);
 exports.default = router;
