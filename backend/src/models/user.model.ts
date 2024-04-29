@@ -1,15 +1,27 @@
-import mongoose from "mongoose";
-//import mongoosePaginate from "mongoose-paginate"
+import mongoose, { Schema, Document, Types } from "mongoose";
 
-let userSchema = new mongoose.Schema({
+interface User extends Document {
+    cin: number;
+    firstname: string;
+    lastname: string;
+    birthDate: Date;
+    email: string;
+    password: string;
+    role: Types.ObjectId;
+}
+
+const userSchema: Schema<User> = new Schema({
     cin: { type: Number, required: true },
     firstname: { type: String, required: true },
     lastname: { type: String, required: true },
     birthDate: { type: Date, required: true },
     email: { type: String, required: true },
-    password: { type: String, required: true }
+    password: { type: String, required: true },
+    role: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Role',
+    },
 });
 
-//userSchema.plugin(mongoosePaginate)
-const User = mongoose.model("User", userSchema)
+const User = mongoose.model<User>("User", userSchema);
 export default User;

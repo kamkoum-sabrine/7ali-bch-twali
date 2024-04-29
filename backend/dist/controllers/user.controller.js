@@ -26,7 +26,9 @@ exports.deleteUser = exports.create = exports.findAll = void 0;
 const user_model_1 = __importDefault(require("../models/user.model"));
 const findAll = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const users = yield user_model_1.default.find({}).exec();
+        const users = yield user_model_1.default.find({})
+            .populate('role') // Populer le champ 'role' avec les détails du rôle
+            .exec();
         return res.status(200).json(users);
     }
     catch (error) {

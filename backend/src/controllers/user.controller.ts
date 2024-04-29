@@ -14,7 +14,9 @@ import User from '../models/user.model';
 
 export const findAll = async (req: Request, res: Response) => {
     try {
-        const users = await User.find({}).exec();
+        const users = await User.find({})
+            .populate('role') // Populer le champ 'role' avec les détails du rôle
+            .exec();
         return res.status(200).json(users);
     } catch (error) {
         console.error(error); // Log the error for debugging purposes
