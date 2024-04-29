@@ -32,3 +32,20 @@ export const create = async (req: Request, res: Response) => {
         return res.status(500).send('Internal Server Error');
     }
 };
+
+export const deleteUser = async (req: Request, res: Response) => {
+    const { userId } = req.body;
+    try {
+        console.log("userId: " + userId);
+        const utilisateurSupprime = await User.findOneAndDelete({ _id: userId });
+        if (!utilisateurSupprime) {
+            return res.status(404).send("Utilisateur non trouvé");
+        }
+        return res.status(200).json(utilisateurSupprime);
+    } catch (error) {
+        console.error(error); // Log the error for debugging purposes
+        return res.status(500).send('Internal Server Error');
+    }
+};
+
+
