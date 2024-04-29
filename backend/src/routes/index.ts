@@ -15,6 +15,6 @@ const router = express.Router();
 
 require('./user.routes')(router);
 require('./role.routes')(router);
-
+require('./recipe.routes')(router)
 
 export default router

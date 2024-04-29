@@ -18,4 +18,5 @@ const express_1 = __importDefault(require("express"));
 const router = express_1.default.Router();
 require('./user.routes')(router);
 require('./role.routes')(router);
+require('./recipe.routes')(router);
 exports.default = router;
