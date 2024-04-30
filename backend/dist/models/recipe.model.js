@@ -28,6 +28,7 @@ const recipeSchema = new mongoose_1.Schema({
     title: { type: String, required: true },
     details: { type: String, required: true },
     state: { type: Number, required: true, default: 0 },
+    image: { type: String, required: false },
     chef: {
         type: mongoose_1.default.Schema.Types.ObjectId,
         ref: 'User',

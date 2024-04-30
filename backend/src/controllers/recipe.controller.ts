@@ -12,6 +12,17 @@ export const findAll = async (req: Request, res: Response) => {
         return res.status(500).send('Internal Server Error');
     }
 };
+export const getApprouvedRecipe = async (req: Request, res: Response) => {
+    try {
+        const recipes = await Recipe.find({ state: 1 })
+            .populate('chef')
+            .exec();
+        return res.status(200).json(recipes);
+    } catch (error) {
+        console.error(error); // Log the error for debugging purposes
+        return res.status(500).send('Internal Server Error');
+    }
+};
 
 export const create = async (req: Request, res: Response) => {
     try {

@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.refuseRecipe = exports.acceptRecipe = exports.deleteRecipe = exports.create = exports.findAll = void 0;
+exports.refuseRecipe = exports.acceptRecipe = exports.deleteRecipe = exports.create = exports.getApprouvedRecipe = exports.findAll = void 0;
 const recipe_model_1 = __importDefault(require("../models/recipe.model"));
 const findAll = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -27,6 +27,19 @@ const findAll = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.findAll = findAll;
+const getApprouvedRecipe = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const recipes = yield recipe_model_1.default.find({ state: 1 })
+            .populate('chef')
+            .exec();
+        return res.status(200).json(recipes);
+    }
+    catch (error) {
+        console.error(error); // Log the error for debugging purposes
+        return res.status(500).send('Internal Server Error');
+    }
+});
+exports.getApprouvedRecipe = getApprouvedRecipe;
 const create = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const recipe = new recipe_model_1.default(req.body);
