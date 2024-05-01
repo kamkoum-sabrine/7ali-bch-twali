@@ -76,7 +76,7 @@ export const getUsersWithRoleChef = async (req: Request, res: Response) => {
                     birthDate: 1,
                     email: 1,
                     password: 1,
-                    role: 1,
+                    roleDetails: 1,
                     image: 1
                 }
             }

@@ -91,7 +91,7 @@ const getUsersWithRoleChef = (req, res) => __awaiter(void 0, void 0, void 0, fun
                     birthDate: 1,
                     email: 1,
                     password: 1,
-                    role: 1,
+                    roleDetails: 1,
                     image: 1
                 }
             }

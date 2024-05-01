@@ -1477,12 +1477,12 @@ h3 {
 
 /* line 1, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_slider.scss */
 .slider_bg_1 {
-  background-image: url(../img/banner/banner.png);
+  background-image: url(../img/bg.avif);
 }
 
 /* line 4, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_slider.scss */
 .slider_bg_2 {
-  background-image: url(../img/banner/banner2.png);
+  background-image: url(../img/bg.avif);
 }
 
 /* line 7, ../../Arafath/CL/CL October/220 Tasty Recipes/HTML/scss/_slider.scss */
@@ -8490,6 +8490,30 @@ h6 {
 .overlay .section-content {
   position: relative;
   z-index: 1;
+}
+
+.boxed-page {
+  position: relative;
+  border-color: #ededed;
+  background-color: #fff;
+}
+
+.boxed-page .section-padding {
+  padding-top: 65px;
+  padding-bottom: 65px;
+}
+
+@media (min-width: 992px) {
+  .boxed-page .section-padding {
+    padding-top: 130px;
+    padding-bottom: 130px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .boxed-page {
+    margin: 30px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
