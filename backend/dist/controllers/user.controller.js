@@ -22,7 +22,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteUser = exports.create = exports.findAll = void 0;
+exports.getUsersWithRoleChef = exports.deleteUser = exports.create = exports.findAll = void 0;
 const user_model_1 = __importDefault(require("../models/user.model"));
 const findAll = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
@@ -65,3 +65,46 @@ const deleteUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     }
 });
 exports.deleteUser = deleteUser;
+const getUsersWithRoleChef = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        // Recherche des utilisateurs avec le rôle "Chef"
+        //  const users = await User.find({ role: { $eq: 'Chef' } }).populate('role');
+        const chefs = yield user_model_1.default.aggregate([
+            {
+                $lookup: {
+                    from: 'roles',
+                    localField: 'role',
+                    foreignField: '_id',
+                    as: 'roleDetails'
+                }
+            },
+            {
+                $match: {
+                    'roleDetails.name': 'Chef' // Remplacez 'name' par le champ approprié dans votre collection de rôles
+                }
+            },
+            {
+                $project: {
+                    cin: 1,
+                    firstname: 1,
+                    lastname: 1,
+                    birthDate: 1,
+                    email: 1,
+                    password: 1,
+                    role: 1,
+                    image: 1
+                }
+            }
+        ]);
+        if (!chefs) {
+            return res.status(404).send("chefs non trouvé");
+        }
+        return res.status(200).json(chefs);
+    }
+    catch (error) {
+        // Gérer les erreurs
+        console.error("Erreur lors de la recherche des chefs :", error);
+        throw error;
+    }
+});
+exports.getUsersWithRoleChef = getUsersWithRoleChef;

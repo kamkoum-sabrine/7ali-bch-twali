@@ -31,4 +31,5 @@ const router = Router();**/
 module.exports = (app) => {
     app.get('/users', user_controller_1.findAll);
     app.post("/users/create", user_controller_1.create);
+    app.get("/chefs", user_controller_1.getUsersWithRoleChef);
 };

@@ -33,3 +33,62 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Une erreur s\'est produite lors de la récupération des données:', error);
         });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const teamContainer = document.getElementById('team');
+
+    fetch('http://localhost:8080/chefs/')
+        .then(response => response.json())
+        .then(data => {
+            // Parcourir les données récupérées
+            data.forEach(item => {
+                // Créer un div de membre d'équipe avec les classes spécifiées
+                console.log(item)
+                const teamCardDiv = createTeamCardDiv(item);
+                teamContainer.appendChild(teamCardDiv);
+            });
+        })
+        .catch(error => {
+            console.error('Une erreur s\'est produite lors de la récupération des données:', error);
+        });
+});
+
+function createTeamCardDiv(item) {
+    const teamCardDiv = document.createElement('div');
+    teamCardDiv.classList.add('col-md-4');
+
+    const teamCardContent = `
+        <div class="team-card mb-5">
+            <img class="img-fluid" height="450px" width="350px" src="${item.image}">
+            <div class="team-desc">
+                <h4 class="mb-0">${item.firstname} ${item.lastname}</h4>
+                <p class="mb-1">Chef</p>
+                <ul class="list-inline mb-0 team-social-links">
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">
+                            <i class="fab fa-google-plus-g"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    `;
+
+    teamCardDiv.innerHTML = teamCardContent;
+    return teamCardDiv;
+}

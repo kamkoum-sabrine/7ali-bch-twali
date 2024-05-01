@@ -8,6 +8,7 @@ interface User extends Document {
     email: string;
     password: string;
     role: Types.ObjectId;
+    image: string;
 }
 
 const userSchema: Schema<User> = new Schema({
@@ -21,6 +22,7 @@ const userSchema: Schema<User> = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Role',
     },
+    image: { type: String, required: false }
 });
 
 const User = mongoose.model<User>("User", userSchema);

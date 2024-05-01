@@ -18,7 +18,7 @@ export default router;
 
 import { create, findAll } from "../controllers/role.controller";**/
 
-import { create, findAll } from "../controllers/user.controller";
+import { create, findAll, getUsersWithRoleChef } from "../controllers/user.controller";
 
 /**export function defineRoleRoutes(app: any) {
     app.use('/', router);
@@ -32,6 +32,7 @@ const router = Router();**/
 module.exports = (app: any) => {
     app.get('/users', findAll);
     app.post("/users/create", create);
+    app.get("/chefs", getUsersWithRoleChef);
 }
 
 

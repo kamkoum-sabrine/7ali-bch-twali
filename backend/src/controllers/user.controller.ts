@@ -50,4 +50,48 @@ export const deleteUser = async (req: Request, res: Response) => {
     }
 };
 
+export const getUsersWithRoleChef = async (req: Request, res: Response) => {
+    try {
+        // Recherche des utilisateurs avec le rôle "Chef"
+        //  const users = await User.find({ role: { $eq: 'Chef' } }).populate('role');
+        const chefs = await User.aggregate([
+            {
+                $lookup: {
+                    from: 'roles', // Le nom de la collection des rôles
+                    localField: 'role',
+                    foreignField: '_id',
+                    as: 'roleDetails'
+                }
+            },
+            {
+                $match: {
+                    'roleDetails.name': 'Chef' // Remplacez 'name' par le champ approprié dans votre collection de rôles
+                }
+            },
+            {
+                $project: {
+                    cin: 1,
+                    firstname: 1,
+                    lastname: 1,
+                    birthDate: 1,
+                    email: 1,
+                    password: 1,
+                    role: 1,
+                    image: 1
+                }
+            }
+        ]);
+
+        if (!chefs) {
+            return res.status(404).send("chefs non trouvé");
+        }
+        return res.status(200).json(chefs);
+
+
+    } catch (error) {
+        // Gérer les erreurs
+        console.error("Erreur lors de la recherche des chefs :", error);
+        throw error;
+    }
+}
 

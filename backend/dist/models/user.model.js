@@ -35,6 +35,7 @@ const userSchema = new mongoose_1.Schema({
         type: mongoose_1.default.Schema.Types.ObjectId,
         ref: 'Role',
     },
+    image: { type: String, required: false }
 });
 const User = mongoose_1.default.model("User", userSchema);
 exports.default = User;
